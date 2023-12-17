@@ -1,0 +1,8 @@
+spring:
+  profile:
+    active: dev
+  application:
+    name: FilterStudio
+    http:
+        auth-token-header-name: ${AUTH_TOKEN_HEADER_NAME_FILTER_STUDIO}
+        auth-token: ${AUTH_TOKEN_FILTER_STUDIO}
