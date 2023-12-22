@@ -13,7 +13,6 @@ public class AuthenticationService {
         if (apiKey == null || !apiKey.equals(authToken)) {
             throw new BadCredentialsException("Invalid API Key");
         }
-        System.out.println();
         return new ApiKeyAuthentication(apiKey, AuthorityUtils.NO_AUTHORITIES);
     }
 }

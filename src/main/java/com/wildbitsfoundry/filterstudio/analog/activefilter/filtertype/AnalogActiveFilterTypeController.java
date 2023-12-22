@@ -3,6 +3,7 @@ package com.wildbitsfoundry.filterstudio.analog.activefilter.filtertype;
 import com.wildbitsfoundry.etk4j.control.TransferFunction;
 import com.wildbitsfoundry.etk4j.control.ZeroPoleGain;
 import com.wildbitsfoundry.etk4j.signals.filters.*;
+import com.wildbitsfoundry.filterstudio.analog.activefilter.filtertype.entity.AnalogActiveFilterType;
 import com.wildbitsfoundry.filterstudio.analog.activefilter.filtertype.request.AnalogActiveFilterTypeRequest;
 import com.wildbitsfoundry.filterstudio.analog.activefilter.filtertype.service.AnalogActiveFilterTypeService;
 import org.springframework.http.MediaType;
@@ -13,11 +14,13 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/v1/analog-active-filters/supported-filter-types")
+@RequestMapping(AnalogActiveFilterTypeController.PATH)
 @CrossOrigin(origins = "http://localhost:4200")
 public class AnalogActiveFilterTypeController {
 
     private AnalogActiveFilterTypeService analogActiveFilterTypeService;
+
+    public static final String PATH = "/api/v1/analog-active-filters/supported-filter-types";
 
     public AnalogActiveFilterTypeController(AnalogActiveFilterTypeService analogActiveFilterTypeService) {
         this.analogActiveFilterTypeService = analogActiveFilterTypeService;
