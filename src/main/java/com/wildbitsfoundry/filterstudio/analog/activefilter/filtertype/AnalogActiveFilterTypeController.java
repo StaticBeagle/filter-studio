@@ -1,9 +1,5 @@
 package com.wildbitsfoundry.filterstudio.analog.activefilter.filtertype;
 
-import com.wildbitsfoundry.etk4j.control.TransferFunction;
-import com.wildbitsfoundry.etk4j.control.ZeroPoleGain;
-import com.wildbitsfoundry.etk4j.signals.filters.*;
-import com.wildbitsfoundry.filterstudio.analog.activefilter.filtertype.entity.AnalogActiveFilterType;
 import com.wildbitsfoundry.filterstudio.analog.activefilter.filtertype.request.AnalogActiveFilterTypeRequest;
 import com.wildbitsfoundry.filterstudio.analog.activefilter.filtertype.service.AnalogActiveFilterTypeService;
 import com.wildbitsfoundry.filterstudio.common.dto.IdDto;
