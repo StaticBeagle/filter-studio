@@ -6,6 +6,7 @@ import com.wildbitsfoundry.etk4j.signals.filters.*;
 import com.wildbitsfoundry.filterstudio.analog.activefilter.filtertype.entity.AnalogActiveFilterType;
 import com.wildbitsfoundry.filterstudio.analog.activefilter.filtertype.request.AnalogActiveFilterTypeRequest;
 import com.wildbitsfoundry.filterstudio.analog.activefilter.filtertype.service.AnalogActiveFilterTypeService;
+import com.wildbitsfoundry.filterstudio.common.dto.IdDto;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -53,9 +54,9 @@ public class AnalogActiveFilterTypeController {
     }
 
     @PostMapping(value = "", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Long> createFilterType(@RequestBody AnalogActiveFilterTypeRequest analogActiveFilterTypeRequest) {
+    public ResponseEntity<IdDto<Long>> createFilterType(@RequestBody AnalogActiveFilterTypeRequest analogActiveFilterTypeRequest) {
         Long id = analogActiveFilterTypeService.createFilterTYpe(analogActiveFilterTypeRequest);
         return ResponseEntity.created(ServletUriComponentsBuilder.fromCurrentRequestUri().path(id.toString()).build().toUri())
-                .body(id);
+                .body(new IdDto(id));
     }
 }
